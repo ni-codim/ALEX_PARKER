@@ -13,5 +13,8 @@ define('DB_PASSWORD', 'root');
 // Initialisation des zones dynamiques
 $content = '';
 
-// Textes
+// Autres constantes
  define('TITLE_POSTS_INDEX',"Blog");
+
+ define('TRUNCATE_LENGTH', 150);
+ define('DATE_FORMAT', 'Y-m-d');

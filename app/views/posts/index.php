@@ -30,14 +30,14 @@
      </div>
      <div class="post-info">
        <span>
-         <?php $date = new DateTime($post['created_at']);
-          echo $date->format('Y-m-d');
+         <?php
+          echo \Core\Functions\datify($post['created_at']);
           ?>
 
        </span> | <span>Life style</span>
      </div>
      <p>
-       <?php echo $post['text']; ?>
+       <?php echo \Core\Functions\truncate($post['text']); ?>
      </p>
      <a
        href="single.html"
