@@ -8,3 +8,5 @@
 // PATTERN: /
 // CTRL: postsController
 // ACTION: index
+
+$content = "<h1>Coucou</h1>";

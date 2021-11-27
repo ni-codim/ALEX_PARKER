@@ -7,14 +7,16 @@
 
  <!DOCTYPE html>
  <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
- </head>
- <body>
-   <h1>Template principal</h1>
-   <?php var_dump($conn); ?>
- </body>
+   <?php include '../app/views/templates/partials/_head.php'; ?>
+
+   <body>
+     <!-- Preloader Start -->
+     <?php include '../app/views/templates/partials/_preloader.php'; ?>
+     <!-- Preloader End -->
+
+     <?php include '../app/views/templates/partials/_main.php'; ?>
+
+     <?php include '../app/views/templates/partials/_scripts.php'; ?>
+
+   </body>
  </html>
