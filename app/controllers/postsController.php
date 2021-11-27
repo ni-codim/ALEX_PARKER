@@ -16,7 +16,7 @@ function indexAction(\PDO $conn){
     $posts = PostsModel\findAll($conn);
   // Je charge la vue posts/index dans $content
     GLOBAL $title, $content;
-    $title = "Blog";
+    $title = TITLE_POSTS_INDEX;
     ob_start();
       include '../app/views/posts/index.php';
     $content = ob_get_clean();

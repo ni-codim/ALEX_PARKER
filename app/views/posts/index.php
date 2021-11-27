@@ -17,7 +17,7 @@
 
 <!-- LISTE DES POSTS -->
  <?php foreach ($posts as $post):
-    $created_at = strtotime($post['created_at']);
+
  ?>
    <!-- Blog Post Start -->
    <div class="col-md-12 blog-post row">
@@ -29,7 +29,11 @@
        >
      </div>
      <div class="post-info">
-       <span><?php echo date('Y',$created_at);?>-<?php echo date('m',$created_at);?>-<?php echo date('d',$created_at);?>
+       <span>
+         <?php $date = new DateTime($post['created_at']);
+          echo $date->format('Y-m-d');
+          ?>
+
        </span> | <span>Life style</span>
      </div>
      <p>

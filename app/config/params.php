@@ -12,3 +12,6 @@ define('DB_PASSWORD', 'root');
 
 // Initialisation des zones dynamiques
 $content = '';
+
+// Textes
+ define('TITLE_POSTS_INDEX',"Blog");

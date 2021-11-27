@@ -11,7 +11,9 @@
 //   TITLE: Alex Parker - Blog
   include_once '../app/controllers/postsController.php';
   \App\Controllers\PostsController\indexAction($conn);
-//
+
+
+
 // ROUTE DU DETAIL D'UN POST
 //     PATTERN: /posts/id/slug-du-post.html
 //     CTRL: ???
