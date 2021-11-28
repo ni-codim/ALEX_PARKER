@@ -21,3 +21,13 @@ function indexAction(\PDO $conn){
       include '../app/views/posts/index.php';
     $content = ob_get_clean();
 }
+
+function showAction(\PDO $conn, int $id){
+    include_once '../app/models/postsModel.php';
+    $post = PostModel\findOneById($conn, $id);
+
+    GLOBAL $content;
+    ob_start();
+      include '../app/views/posts/show.php';
+    $content = ob_get_clean();
+}

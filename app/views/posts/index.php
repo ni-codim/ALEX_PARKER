@@ -5,7 +5,7 @@
     - $posts: ARRAY(ARRAY(id, title, text, created_at, quote, category_id))
 */
  ?>
-
+<div class="col-md-12 content-page">
 
 <!-- ADD A POST -->
  <div>
@@ -16,17 +16,16 @@
  <!-- ADD A POST END -->
 
 <!-- LISTE DES POSTS -->
- <?php foreach ($posts as $post):
 
- ?>
    <!-- Blog Post Start -->
    <div class="col-md-12 blog-post row">
+     <?php foreach ($posts as $post):?>
      <div class="post-title">
-       <a href="single.html"
-         ><h1>
+       <a href="<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>">
+         <h1>
           <?php echo $post['title']; ?>
-         </h1></a
-       >
+         </h1>
+       </a>
      </div>
      <div class="post-info">
        <span>
@@ -47,7 +46,8 @@
        "
        ><span>Read More</span></a
      >
-   </div>
-   <!-- Blog Post End -->
+     <?php endforeach; ?>
 
- <?php endforeach; ?>
+   </div>
+ <!-- Blog Post End -->
+ </div>

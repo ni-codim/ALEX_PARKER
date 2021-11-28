@@ -10,11 +10,14 @@
    <?php include '../app/views/templates/partials/_head.php'; ?>
 
    <body>
-     <!-- Preloader Start -->
+
      <?php include '../app/views/templates/partials/_preloader.php'; ?>
-     <!-- Preloader End -->
 
      <?php include '../app/views/templates/partials/_main.php'; ?>
+
+     <!-- Back to Top Start -->
+     <a href="#" class="scroll-to-top"><i class="fa fa-long-arrow-up"></i></a>
+     <!-- Back to Top End -->
 
      <?php include '../app/views/templates/partials/_scripts.php'; ?>
 

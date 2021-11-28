@@ -3,7 +3,7 @@
   ./app/views/templates/partials/_footer.php
 */
  ?>
-
+<!-- Footer Start -->
  <div class="col-md-12 page-body margin-top-50 footer">
    <footer>
      <ul class="menu-link">
@@ -19,4 +19,5 @@
      </div>
      <!-- UiPasta Credit End -->
    </footer>
+   <!-- Footer End -->
  </div>

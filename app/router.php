@@ -4,22 +4,28 @@
     ROUTEUR PRINCIPAL
 */
 
+// ROUTE DU DETAIL D'UN POST
+//   PATTERN: /posts/id/slug-du-post.html
+//   CTRL: postsController
+//   ACTION: show
+//   TITLE: Alex Parker - Title du post
+if (isset($_GET['postId'])) :
+  include_once '../app/controllers/postsController.php';
+  \App\Controllers\PostsController\showAction($conn, $_GET['postId']);
+
 // ROUTE PAR DEFAUT: liste des posts
 //   PATTERN: /
 //   CTRL: postsController
 //   ACTION: index
 //   TITLE: Alex Parker - Blog
+else:
   include_once '../app/controllers/postsController.php';
   \App\Controllers\PostsController\indexAction($conn);
+endif;
 
 
 
-// ROUTE DU DETAIL D'UN POST
-//     PATTERN: /posts/id/slug-du-post.html
-//     CTRL: ???
-//     ACTION: ???
-//     TITLE: Alex Parker - Title du post
-//
+
 // ROUTE D'AJOUT D'UN POST: affichage du formulaire
 //     PATTERN: /posts/add/form.html
 //     CTRL: ???

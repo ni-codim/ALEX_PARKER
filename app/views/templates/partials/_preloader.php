@@ -3,7 +3,8 @@
   ./app/views/templates/partials/_preloader.php
 */
  ?>
-
- <div class="preloader">
-   <div class="rounder"></div>
- </div>
+<!-- Preloader Start -->
+   <div class="preloader">
+     <div class="rounder"></div>
+   </div>
+<!-- Preloader End -->
