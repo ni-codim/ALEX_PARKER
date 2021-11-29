@@ -4,16 +4,18 @@
 */
  ?>
 
- <div id="main">
-   <div class="container">
-     <div class="row">
+ <!-- Blog Post (Right Sidebar) Start -->
+ <div class="col-md-9">
+     <div class="col-md-12 page-body">
+         <div class="row">
 
-       <?php include '../app/views/templates/partials/_leftsidebar.php'; ?>
+             <?php echo $content; ?>
 
-
-
-       <?php include '../app/views/templates/partials/_rightsidebar.php'; ?>
+         </div>
 
      </div>
-   </div>
+
+     <?php include '../app/views/templates/partials/_footer.php'; ?>
+
  </div>
+ <!-- Blog Post (Right Sidebar) End -->

@@ -13,7 +13,17 @@
 
      <?php include '../app/views/templates/partials/_preloader.php'; ?>
 
-     <?php include '../app/views/templates/partials/_main.php'; ?>
+     <div id="main">
+       <div class="container">
+         <div class="row">
+
+           <?php include '../app/views/templates/partials/_aside.php'; ?>
+
+           <?php include '../app/views/templates/partials/_main.php'; ?>
+
+         </div>
+       </div>
+     </div>
 
      <!-- Back to Top Start -->
      <a href="#" class="scroll-to-top"><i class="fa fa-long-arrow-up"></i></a>

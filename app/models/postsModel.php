@@ -19,6 +19,12 @@ function findAll(\PDO $conn) :array {
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
+/**
+ * [findOneById description]
+ * @param  PDO   $conn               [description]
+ * @param  int   $id                 [description]
+ * @return array       [description]
+ */
 function findOneById(\PDO $conn, int $id) :array {
   $sql = "SELECT *
           FROM posts

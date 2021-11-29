@@ -9,3 +9,8 @@
 
  <!-- Main Javascript File  -->
  <script type="text/javascript" src="js/scripts.js"></script>
+
+ <!-- JS Fontawesome -->
+
+ <script src="https://kit.fontawesome.com/c7657912ce.js" crossorigin="anonymous"></script>
+ 

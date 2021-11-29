@@ -22,11 +22,18 @@ function indexAction(\PDO $conn){
     $content = ob_get_clean();
 }
 
+/**
+ * [showAction description]
+ * @param  PDO    $conn               [description]
+ * @param  int    $id                 [description]
+ */
 function showAction(\PDO $conn, int $id){
+    // Je mets $posts les champs d'un post que je demande au modèle
     include_once '../app/models/postsModel.php';
     $post = PostModel\findOneById($conn, $id);
-
+    // Je charge la vue posts/show dans $content
     GLOBAL $content;
+    $title = $post['title'];
     ob_start();
       include '../app/views/posts/show.php';
     $content = ob_get_clean();

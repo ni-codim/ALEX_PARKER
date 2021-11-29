@@ -4,6 +4,8 @@
     ROUTEUR PRINCIPAL
 */
 
+use \App\Controllers\PostsController;
+
 // ROUTE DU DETAIL D'UN POST
 //   PATTERN: /posts/id/slug-du-post.html
 //   CTRL: postsController
@@ -11,7 +13,7 @@
 //   TITLE: Alex Parker - Title du post
 if (isset($_GET['postId'])) :
   include_once '../app/controllers/postsController.php';
-  \App\Controllers\PostsController\showAction($conn, $_GET['postId']);
+  PostsController\showAction($conn, $_GET['postId']);
 
 // ROUTE PAR DEFAUT: liste des posts
 //   PATTERN: /
