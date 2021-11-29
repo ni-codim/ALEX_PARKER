@@ -21,7 +21,7 @@
    <div class="col-md-12 blog-post row">
      <?php foreach ($posts as $post):?>
      <div class="post-title">
-       <a href="<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>">
+       <a href="posts/<?php echo $post['postId']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>.html">
          <h1>
           <?php echo $post['title']; ?>
          </h1>

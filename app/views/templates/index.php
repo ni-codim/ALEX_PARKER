@@ -4,7 +4,6 @@
   TEMPLATE PRINCIPAL
 */
  ?>
-
  <!DOCTYPE html>
  <html lang="en">
    <?php include '../app/views/templates/partials/_head.php'; ?>

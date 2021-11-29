@@ -11,8 +11,8 @@ namespace App\Models\PostsModel;
  * @return array          [description]
  */
 function findAll(\PDO $conn) :array {
-  $sql = "SELECT *
-          FROM posts
+  $sql = "SELECT *, p.id as postId
+          FROM posts p
           ORDER BY created_at DESC
           LIMIT 10;";
   $rs = $conn->query($sql);
@@ -26,9 +26,9 @@ function findAll(\PDO $conn) :array {
  * @return array       [description]
  */
 function findOneById(\PDO $conn, int $id) :array {
-  $sql = "SELECT *
-          FROM posts
-          WHERE id = :id;";
+  $sql = "SELECT *, p.id as postId
+          FROM posts p
+          WHERE p.id = :id;";
   $rs = $conn->prepare($sql);
   $rs->bindValue(':id',$id, \PDO::PARAM_INT);
   $rs->execute();

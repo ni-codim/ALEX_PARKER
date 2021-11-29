@@ -4,16 +4,12 @@
     ROUTEUR PRINCIPAL
 */
 
-use \App\Controllers\PostsController;
 
-// ROUTE DU DETAIL D'UN POST
-//   PATTERN: /posts/id/slug-du-post.html
-//   CTRL: postsController
-//   ACTION: show
-//   TITLE: Alex Parker - Title du post
-if (isset($_GET['postId'])) :
-  include_once '../app/controllers/postsController.php';
-  PostsController\showAction($conn, $_GET['postId']);
+// ROUTEUR DES POSTS
+//   PATTERN: index?posts=x
+//   ROUTEUR: postsRouter
+if (isset($_GET['posts'])) :
+  include_once '../app/routers/posts.php';
 
 // ROUTE PAR DEFAUT: liste des posts
 //   PATTERN: /

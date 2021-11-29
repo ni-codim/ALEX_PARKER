@@ -12,9 +12,9 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
   # DETAIL D'UN POST
-  # PATTERN: posts/{id}/{slug}
-  # URL: index.php?postId=x
-  RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?postId=$1 [L]
+  # PATTERN: posts/{id}/{slug}.html
+  # URL: index.php?posts=show&postId=x
+  RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?posts=show&id=$1 [L]
 
 
 

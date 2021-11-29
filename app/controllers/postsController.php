@@ -30,9 +30,9 @@ function indexAction(\PDO $conn){
 function showAction(\PDO $conn, int $id){
     // Je mets $posts les champs d'un post que je demande au modèle
     include_once '../app/models/postsModel.php';
-    $post = PostModel\findOneById($conn, $id);
+    $post = PostsModel\findOneById($conn, $id);
     // Je charge la vue posts/show dans $content
-    GLOBAL $content;
+    GLOBAL $title, $content;
     $title = $post['title'];
     ob_start();
       include '../app/views/posts/show.php';
