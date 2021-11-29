@@ -12,8 +12,10 @@ namespace App\Models\PostsModel;
  */
 function findAll(\PDO $conn) :array {
   $sql = "SELECT *, p.id as postId,
+          c.name as categoryName,
           p.created_at as postDate
           FROM posts p
+          JOIN categories c ON p.category_id = c.id
           ORDER BY p.created_at DESC
           LIMIT 10;";
   $rs = $conn->query($sql);
@@ -28,8 +30,10 @@ function findAll(\PDO $conn) :array {
  */
 function findOneById(\PDO $conn, int $id) :array {
   $sql = "SELECT *, p.id as postId,
+          c.name as categoryName,
           p.created_at as postDate
           FROM posts p
+          JOIN categories c ON p.category_id = c.id
           WHERE p.id = :id;";
   $rs = $conn->prepare($sql);
   $rs->bindValue(':id',$id, \PDO::PARAM_INT);

@@ -32,7 +32,7 @@
 
      <!-- Post Detail Start -->
      <div class="post-info">
-       <span><?php echo Core\Functions\datify($post['postDate'], 'F d, Y') ?></span> | <span>Life style</span>
+       <span><?php echo Core\Functions\datify($post['postDate'], 'F d, Y') ?></span> | <span><?php echo $post['categoryName']; ?></span>
      </div>
      <!-- Post Detail End -->
 

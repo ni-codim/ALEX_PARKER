@@ -32,7 +32,7 @@
          <?php
           echo \Core\Functions\datify($post['postDate'], 'Y\-m\-d');
           ?>
-       </span> | <span>Life style</span>
+       </span> | <span><?php echo $post['categoryName']; ?></span>
      </div>
      <p>
        <?php echo \Core\Functions\truncate($post['text']); ?>
