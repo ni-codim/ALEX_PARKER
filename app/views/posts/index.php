@@ -30,16 +30,15 @@
      <div class="post-info">
        <span>
          <?php
-          echo \Core\Functions\datify($post['created_at']);
+          echo \Core\Functions\datify($post['postDate'], 'Y\-m\-d');
           ?>
-
        </span> | <span>Life style</span>
      </div>
      <p>
        <?php echo \Core\Functions\truncate($post['text']); ?>
      </p>
      <a
-       href="single.html"
+       href="posts/<?php echo $post['postId']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>.html"
        class="
          button button-style button-anim
          fa fa-long-arrow-right

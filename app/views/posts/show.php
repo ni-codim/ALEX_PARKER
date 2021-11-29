@@ -32,7 +32,7 @@
 
      <!-- Post Detail Start -->
      <div class="post-info">
-       <span>November 23, 2016</span> | <span>Life style</span>
+       <span><?php echo Core\Functions\datify($post['postDate'], 'F d, Y') ?></span> | <span>Life style</span>
      </div>
      <!-- Post Detail End -->
 
@@ -67,13 +67,7 @@
      <!-- Post Blockquote (Italic Style) Start -->
      <blockquote class="margin-top-40 margin-bottom-40">
        <p>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Proin at quam at orci commodo hendrerit vitae nec eros.
-         Vestibulum neque est, imperdiet nec tortor nec, tempor
-         semper metus. Cras vel tempus velit,
-         <b>et accumsan nisi</b>. Duis laoreet pretium ultricies.
-         Curabitur rhoncus auctor nunc congue sodale Sed posuere
-         nisi ipsum.
+        <?php echo $post['quote']; ?>
        </p>
      </blockquote>
      <!-- Post Blockquote (Italic Style) End -->
@@ -94,3 +88,12 @@
      <!-- Post Buttons End -->
    </div>
  </div>
+
+ <!-- Endpage Box (Popup When Scroll Down) Start -->
+ <div id="scroll-down-popup" class="endpage-box">
+   <h4>Read Also</h4>
+   <a href="#"
+     >How to make your company website based on bootstrap framework...</a
+   >
+ </div>
+ <!-- Endpage Box (Popup When Scroll Down) End -->

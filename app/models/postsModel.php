@@ -11,9 +11,10 @@ namespace App\Models\PostsModel;
  * @return array          [description]
  */
 function findAll(\PDO $conn) :array {
-  $sql = "SELECT *, p.id as postId
+  $sql = "SELECT *, p.id as postId,
+          p.created_at as postDate
           FROM posts p
-          ORDER BY created_at DESC
+          ORDER BY p.created_at DESC
           LIMIT 10;";
   $rs = $conn->query($sql);
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
@@ -26,7 +27,8 @@ function findAll(\PDO $conn) :array {
  * @return array       [description]
  */
 function findOneById(\PDO $conn, int $id) :array {
-  $sql = "SELECT *, p.id as postId
+  $sql = "SELECT *, p.id as postId,
+          p.created_at as postDate
           FROM posts p
           WHERE p.id = :id;";
   $rs = $conn->prepare($sql);

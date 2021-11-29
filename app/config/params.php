@@ -17,4 +17,4 @@ $content = '';
  define('TITLE_POSTS_INDEX',"Blog");
 
  define('TRUNCATE_LENGTH', 150);
- define('DATE_FORMAT', 'Y-m-d');
+ define('DATE_FORMAT', 'd-m-Y');
