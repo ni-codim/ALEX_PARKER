@@ -66,6 +66,13 @@ function findOneById(\PDO $conn, int $id) :array {
      return $conn->lastInsertId();
  }
 
+/**
+ * [updateOneById description]
+ * @param  PDO   $conn
+ * @param  int   $id
+ * @param  array $data
+ * @return bool
+ */
 function updateOneById(\PDO $conn, int $id, array $data): bool{
     $sql = "UPDATE posts
             SET title   = :title,
@@ -81,4 +88,27 @@ function updateOneById(\PDO $conn, int $id, array $data): bool{
     $rs->bindValue(':id', $id, \PDO::PARAM_INT);
 
     return intval($rs->execute());
+}
+
+/**
+ * [deleteOneById description]
+ * @param  PDO  $conn
+ * @param  int  $id
+ * @return bool
+ */
+function deleteOneById(\PDO $conn, int $id): bool{
+    $sql = "DELETE FROM posts
+            WHERE id = :id;";
+    $rs = $conn->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+
+    return intval($rs->execute());
+}
+
+function findNumberOfPostsByCategory(\PDO $conn){
+    $sql = "SELECT COUNT(id) AS nbrPostsByCategory, category_id
+            FROM posts
+            GROUP BY category_id;";
+    $rs = $conn->query($sql);
+    return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }

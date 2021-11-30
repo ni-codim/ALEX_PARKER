@@ -1,5 +1,4 @@
 <?php
-
 /*
   ./app/views/posts/editForm.php
   Variables disponibles:

@@ -50,24 +50,13 @@ switch ($_GET['posts']):
         //   PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
         PostsController\editAction($conn, $_GET['id']);
         break;
+    case 'delete':
+        // ROUTE DE SUPPRESSION D'UN POST:
+        //     PATTERN: /posts/id/slug-du-post/delete.html
+        //     CTRL: postsController
+        //     ACTION: delete
+        //     PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
+        PostsController\deleteAction($conn, $_GET['id']);
+        break;
 endswitch;
-
-
-
-//
-//
-// ROUTE DE SUPPRESSION D'UN POST:
-//     PATTERN: /posts/id/slug-du-post/delete.html
-//     CTRL: ???
-//     ACTION: ???
-//     PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
-
-
-
-
-
-
-
-
-
  ?>

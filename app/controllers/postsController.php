@@ -93,3 +93,11 @@ function editAction(\PDO $conn, int $id){
     // Je redirige vers le détail du post
     header('location: ' . BASE_URL . 'posts/' . $id . '/' . \Core\Functions\slugify($_POST['title']) . '.html');
 }
+
+function deleteAction(\PDO $conn, int $id){
+    // Je demande au modèle des posts de supprimer un post
+    include_once '../app/models/postsModel.php';
+    $deletedPost = PostsModel\deleteOneById($conn, $id, $_POST);
+    // Je redirige vers la liste des posts
+    header('location: ' . BASE_URL);
+}
