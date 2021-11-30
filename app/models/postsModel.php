@@ -1,7 +1,7 @@
 <?php
 /*
   ./app/models/postsModel.php
-  Modèle des posts 
+  Modèle des posts
 */
 
 namespace App\Models\PostsModel;
@@ -41,3 +41,25 @@ function findOneById(\PDO $conn, int $id) :array {
   $rs->execute();
   return $rs->fetch(\PDO::FETCH_ASSOC);
 }
+
+/**
+ * [insert description]
+ * @param  PDO   $conn
+ * @param  array $data
+ * @return int
+ */
+ function insert(\PDO $conn, array $data): int {
+    $sql = "INSERT INTO posts
+            SET title   = :title,
+            text        = :text,
+            quote       = :quote,
+            category_id = :category,
+            created_at  = CURRENT_TIMESTAMP();";
+     $rs = $conn->prepare($sql);
+     $rs->bindValue(':title', $data['title'], \PDO::PARAM_STR);
+     $rs->bindValue(':text', $data['text'], \PDO::PARAM_STR);
+     $rs->bindValue(':quote', $data['quote'], \PDO::PARAM_STR);
+     $rs->bindValue(':category', $data['category_id'], \PDO::PARAM_INT);
+     $rs->execute();
+     return $conn->lastInsertId();
+ }

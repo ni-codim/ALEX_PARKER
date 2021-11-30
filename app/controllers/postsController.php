@@ -55,5 +55,16 @@ function addFormAction(\PDO $conn){
     ob_start();
     include '../app/views/posts/addForm.php';
     $content = ob_get_clean();
+}
 
+/**
+ * [addAction description]
+ * @param PDO $conn  [description]
+ */
+function addAction(\PDO $conn){
+    // Je demande au modèle des posts d'ajouter un post
+    include_once '../app/models/postsModel.php';
+    $id = \App\Models\PostsModel\insert($conn, $_POST);
+    // Je redirige vers l'index
+    header('location: ' . BASE_URL);
 }

@@ -16,7 +16,7 @@
     <!-- Post Headline End -->
 
     <!-- Form Start -->
-    <form action="">
+    <form action="posts/add/insert.html" method="post">
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -61,8 +61,9 @@
           <option disabled selected>
             Select your category
           </option>
-          <option value="1">Life style</option>
-          <option value="2">Sport</option>
+          <?php foreach ($categories as $categorie) : ?>
+            <option value="<?php echo $categorie['id']; ?>"><?php echo $categorie['name']; ?></option>
+          <?php endforeach; ?>
         </select>
       </div>
       <div>

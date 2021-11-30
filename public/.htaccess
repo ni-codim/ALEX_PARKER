@@ -21,6 +21,11 @@ RewriteEngine on
   # URL: index.php?posts=addForm
   RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
 
+  # AJOUT D'UN POST: INSERT
+  # PATTERN: /posts/add/insert.html
+  # URL: index.php?posts=add
+  RewriteRule ^posts\/add\/insert.html$ index.php?posts=add [L]
+
 
 
 # --------------------------------------------------

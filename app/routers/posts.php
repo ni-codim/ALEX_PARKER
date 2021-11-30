@@ -25,20 +25,19 @@ switch ($_GET['posts']):
         //   ACTION: addForm
         //   TITLE: Alex Parker - Add a post
         PostsController\addFormAction($conn);
+        break;
+     case 'add';
+        // ROUTE D'AJOUT D'UN POST: INSERT
+        //   PATTERN: /posts/add/insert.html
+        //   CTRL: postsController
+        //   ACTION: add
+        //   PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
+        PostsController\addAction($conn);
+        break;
+
 endswitch;
 
-// ROUTE D'AJOUT D'UN POST: affichage du formulaire
-//     PATTERN: /posts/add/form.html
-//     CTRL: ???
-//     ACTION: ???
-//     TITLE: Alex Parker - Add a post
-//
-// ROUTE D'AJOUT D'UN POST: INSERT
-//     PATTERN: /posts/add/insert.html
-//     CTRL: ???
-//     ACTION: ???
-//     PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
-//
+
 // ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire
 //     PATTERN: /posts/id/slug-du-post/edit/form.html
 //     CTRL: ???
