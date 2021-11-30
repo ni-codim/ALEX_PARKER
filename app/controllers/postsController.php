@@ -11,7 +11,7 @@ use \App\Models\PostsModel;
  * @param  PDO    $conn   [description]
  */
 function indexAction(\PDO $conn){
-  // Je mets dans $posts la liste des 10 derniers posts que je demande au modèle
+  // Je mets dans $posts la liste des 10 derniers posts que je demande au modèle des posts
     include_once '../app/models/postsModel.php';
     $posts = PostsModel\findAll($conn);
   // Je charge la vue posts/index dans $content
@@ -28,7 +28,8 @@ function indexAction(\PDO $conn){
  * @param  int    $id                 [description]
  */
 function showAction(\PDO $conn, int $id){
-    // Je mets $posts les champs d'un post que je demande au modèle
+    // Je demande au modèle des posts les champs d'un post selon son id
+    // Je mets ça dans $post
     include_once '../app/models/postsModel.php';
     $post = PostsModel\findOneById($conn, $id);
     // Je charge la vue posts/show dans $content
@@ -37,4 +38,22 @@ function showAction(\PDO $conn, int $id){
     ob_start();
       include '../app/views/posts/show.php';
     $content = ob_get_clean();
+}
+
+/**
+ * [addFormAction description]
+ * @param PDO $conn  [description]
+ */
+function addFormAction(\PDO $conn){
+    //  Je demande les catégories au modèle des catégories
+    //  Je les mets dans $categories
+    include_once '../app/models/categoriesModel.php';
+    $categories = \App\Models\CategoriesModel\findAll($conn);
+    // Je charge la vue addForm dans $content
+    GLOBAL $title, $content;
+    $title = TITLE_POSTS_ADDFORM;
+    ob_start();
+    include '../app/views/posts/addForm.php';
+    $content = ob_get_clean();
+
 }

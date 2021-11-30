@@ -1,6 +1,7 @@
 <?php
 /*
   ./app/models/postsModel.php
+  Modèle des posts 
 */
 
 namespace App\Models\PostsModel;

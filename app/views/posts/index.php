@@ -9,7 +9,7 @@
 
 <!-- ADD A POST -->
  <div>
-   <a href="form.html" type="button" class="btn btn-primary"
+   <a href="posts/add/form.html" type="button" class="btn btn-primary"
      >Add a Post</a
    >
  </div>
