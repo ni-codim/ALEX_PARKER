@@ -1,3 +1,13 @@
+<?php
+
+/*
+  ./app/views/posts/editForm.php
+  Variables disponibles:
+    - $post ARRAY(id, title, text, created_at, quote, categoryId, name))
+*/
+
+?>
+
 <div class="sub-title">
   <a href="index.html" title="Go to Home Page"
     ><h2>Back Home</h2></a

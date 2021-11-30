@@ -42,16 +42,19 @@ switch ($_GET['posts']):
         //   TITLE: Alex Parker - Edit a post
         PostsController\editFormAction($conn, $_GET['id']);
         break;
+    case 'edit':
+        // ROUTE DE MODIFICATION D'UN POST: UPDATE
+        //   PATTERN: /posts/id/slug-du-post/edit/update.html
+        //   CTRL: postsController
+        //   ACTION: edit
+        //   PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
+        PostsController\editAction($conn, $_GET['id']);
+        break;
 endswitch;
 
 
 
 //
-// ROUTE DE MODIFICATION D'UN POST: UPDATE
-//     PATTERN: /posts/id/slug-du-post/edit/update.html
-//     CTRL: ???
-//     ACTION: ???
-//     PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
 //
 // ROUTE DE SUPPRESSION D'UN POST:
 //     PATTERN: /posts/id/slug-du-post/delete.html

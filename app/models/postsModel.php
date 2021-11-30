@@ -65,3 +65,20 @@ function findOneById(\PDO $conn, int $id) :array {
      $rs->execute();
      return $conn->lastInsertId();
  }
+
+function updateOneById(\PDO $conn, int $id, array $data): bool{
+    $sql = "UPDATE posts
+            SET title   = :title,
+            text        = :text,
+            quote       = :quote,
+            category_id = :category
+            WHERE id    = :id;";
+    $rs = $conn->prepare($sql);
+    $rs->bindValue(':title', $data['title'], \PDO::PARAM_STR);
+    $rs->bindValue(':text', $data['text'], \PDO::PARAM_STR);
+    $rs->bindValue(':quote', $data['quote'], \PDO::PARAM_STR);
+    $rs->bindValue(':category', $data['category_id'], \PDO::PARAM_INT);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+
+    return intval($rs->execute());
+}

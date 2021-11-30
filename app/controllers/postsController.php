@@ -65,12 +65,12 @@ function addAction(\PDO $conn){
     // Je demande au modèle des posts d'ajouter un post
     include_once '../app/models/postsModel.php';
     $id = \App\Models\PostsModel\insert($conn, $_POST);
-    // Je redirige vers l'index
+    // Je redirige vers la liste des posts
     header('location: ' . BASE_URL);
 }
 
 function editFormAction(\PDO $conn, int $id){
-    // Je demande au modèle de trouver le post 
+    // Je demande au modèle de trouver le post
     // selon l'id correspondant pour modifier le post
     include_once '../app/models/postsModel.php';
     // Je mets le post trouvé dans $post
@@ -84,4 +84,12 @@ function editFormAction(\PDO $conn, int $id){
     ob_start();
     include '../app/views/posts/editForm.php';
     $content = ob_get_clean();
+}
+
+function editAction(\PDO $conn, int $id){
+    // Je demande au modèle des posts de modifier un post
+    include_once '../app/models/postsModel.php';
+    $editedPost = PostsModel\updateOneById($conn, $id, $_POST);
+    // Je redirige vers le détail du post
+    header('location: ' . BASE_URL . 'posts/' . $id . '/' . \Core\Functions\slugify($_POST['title']) . '.html');
 }
