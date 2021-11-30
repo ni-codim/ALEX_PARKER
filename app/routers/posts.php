@@ -18,7 +18,7 @@ switch ($_GET['posts']):
         //   TITLE: Alex Parker - Title du post
         PostsController\showAction($conn, $_GET['id']);
         break;
-     case 'addForm';
+     case 'addForm':
         // ROUTE D'AJOUT D'UN POST: affichage du formulaire
         //   PATTERN: /posts/add/form.html
         //   CTRL: postsController
@@ -26,7 +26,7 @@ switch ($_GET['posts']):
         //   TITLE: Alex Parker - Add a post
         PostsController\addFormAction($conn);
         break;
-     case 'add';
+     case 'add':
         // ROUTE D'AJOUT D'UN POST: INSERT
         //   PATTERN: /posts/add/insert.html
         //   CTRL: postsController
@@ -34,15 +34,18 @@ switch ($_GET['posts']):
         //   PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
         PostsController\addAction($conn);
         break;
-
+    case 'editForm':
+        // ROUTE DE MODIFICATION D'UN POST: affichage du formulaire
+        //   PATTERN: /posts/id/slug-du-post/edit/form.html
+        //   CTRL: postsController
+        //   ACTION: editForm
+        //   TITLE: Alex Parker - Edit a post
+        PostsController\editFormAction($conn, $_GET['id']);
+        break;
 endswitch;
 
 
-// ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire
-//     PATTERN: /posts/id/slug-du-post/edit/form.html
-//     CTRL: ???
-//     ACTION: ???
-//     TITLE: Alex Parker - Edit a post
+
 //
 // ROUTE DE MODIFICATION D'UN POST: UPDATE
 //     PATTERN: /posts/id/slug-du-post/edit/update.html

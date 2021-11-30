@@ -28,9 +28,10 @@ function indexAction(\PDO $conn){
  * @param  int    $id                 [description]
  */
 function showAction(\PDO $conn, int $id){
-    // Je demande au modèle des posts les champs d'un post selon son id
-    // Je mets ça dans $post
+    // Je demande au modèle de trouver le post
+    // selon l'id correspondant pour afficher le post
     include_once '../app/models/postsModel.php';
+    // Je mets le post trouvé dans $post
     $post = PostsModel\findOneById($conn, $id);
     // Je charge la vue posts/show dans $content
     GLOBAL $title, $content;
@@ -45,8 +46,7 @@ function showAction(\PDO $conn, int $id){
  * @param PDO $conn  [description]
  */
 function addFormAction(\PDO $conn){
-    //  Je demande les catégories au modèle des catégories
-    //  Je les mets dans $categories
+    // Je charge les catégories dans $categories
     include_once '../app/models/categoriesModel.php';
     $categories = \App\Models\CategoriesModel\findAll($conn);
     // Je charge la vue addForm dans $content
@@ -67,4 +67,21 @@ function addAction(\PDO $conn){
     $id = \App\Models\PostsModel\insert($conn, $_POST);
     // Je redirige vers l'index
     header('location: ' . BASE_URL);
+}
+
+function editFormAction(\PDO $conn, int $id){
+    // Je demande au modèle de trouver le post 
+    // selon l'id correspondant pour modifier le post
+    include_once '../app/models/postsModel.php';
+    // Je mets le post trouvé dans $post
+    $post = PostsModel\findOneById($conn, $id);
+    // Je charge les catégories dans $categories
+    include_once '../app/models/categoriesModel.php';
+    $categories = \App\Models\CategoriesModel\findAll($conn);
+    // Je charge la vue editForm dans $content
+    GLOBAL $title, $content;
+    $title = TITLE_POSTS_EDITFORM;
+    ob_start();
+    include '../app/views/posts/editForm.php';
+    $content = ob_get_clean();
 }

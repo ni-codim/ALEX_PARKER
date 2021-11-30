@@ -13,6 +13,7 @@ namespace App\Models\PostsModel;
  */
 function findAll(\PDO $conn) :array {
   $sql = "SELECT *, p.id as postId,
+          c.id as categoryId,
           c.name as categoryName,
           p.created_at as postDate
           FROM posts p
@@ -31,6 +32,7 @@ function findAll(\PDO $conn) :array {
  */
 function findOneById(\PDO $conn, int $id) :array {
   $sql = "SELECT *, p.id as postId,
+          c.id as categoryId,
           c.name as categoryName,
           p.created_at as postDate
           FROM posts p

@@ -13,7 +13,7 @@ RewriteEngine on
 #--------------------------------------------------
   # DETAIL D'UN POST
   # PATTERN: posts/{id}/{slug}.html
-  # URL: index.php?posts=show&postId=x
+  # URL: index.php?posts=show&id=x
   RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?posts=show&id=$1 [L]
 
   # AJOUT D'UN POST: affichage du formulaire
@@ -25,6 +25,13 @@ RewriteEngine on
   # PATTERN: /posts/add/insert.html
   # URL: index.php?posts=add
   RewriteRule ^posts\/add\/insert.html$ index.php?posts=add [L]
+
+  # MODIFICATION D'UN POST: affichage du formulaire
+  # PATTERN: /posts/id/slug-du-post/edit/form.html
+  # URL: index.php?posts=editForm&id=x
+  RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/form.html$ index.php?posts=editForm&id=$1 [L]
+
+
 
 
 
