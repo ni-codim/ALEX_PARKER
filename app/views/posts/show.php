@@ -84,6 +84,7 @@
          type="button"
          class="btn btn-secondary"
          role="button"
+         id="suppr"
          >Delete Post</a
        >
      </div>

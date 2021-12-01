@@ -12,7 +12,7 @@ include_once '../app/controllers/postsController.php';
 switch ($_GET['posts']):
      case 'show':
         // ROUTE DU DETAIL D'UN POST
-        //   PATTERN: /posts/id/slug-du-post.html
+        //   PATTERN: index?posts=show&id=x
         //   CTRL: postsController
         //   ACTION: show
         //   TITLE: Alex Parker - Title du post
@@ -20,7 +20,7 @@ switch ($_GET['posts']):
         break;
      case 'addForm':
         // ROUTE D'AJOUT D'UN POST: affichage du formulaire
-        //   PATTERN: /posts/add/form.html
+        //   PATTERN: index?posts=addForm
         //   CTRL: postsController
         //   ACTION: addForm
         //   TITLE: Alex Parker - Add a post
@@ -28,7 +28,7 @@ switch ($_GET['posts']):
         break;
      case 'add':
         // ROUTE D'AJOUT D'UN POST: INSERT
-        //   PATTERN: /posts/add/insert.html
+        //   PATTERN: index.php?posts=add
         //   CTRL: postsController
         //   ACTION: add
         //   PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
@@ -36,7 +36,7 @@ switch ($_GET['posts']):
         break;
     case 'editForm':
         // ROUTE DE MODIFICATION D'UN POST: affichage du formulaire
-        //   PATTERN: /posts/id/slug-du-post/edit/form.html
+        //   PATTERN: index.php?posts=editForm
         //   CTRL: postsController
         //   ACTION: editForm
         //   TITLE: Alex Parker - Edit a post
@@ -44,7 +44,7 @@ switch ($_GET['posts']):
         break;
     case 'edit':
         // ROUTE DE MODIFICATION D'UN POST: UPDATE
-        //   PATTERN: /posts/id/slug-du-post/edit/update.html
+        //   PATTERN: index.php?posts=edit&id=x
         //   CTRL: postsController
         //   ACTION: edit
         //   PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
@@ -52,7 +52,7 @@ switch ($_GET['posts']):
         break;
     case 'delete':
         // ROUTE DE SUPPRESSION D'UN POST:
-        //     PATTERN: /posts/id/slug-du-post/delete.html
+        //     PATTERN: index.php?posts=delete&id=x
         //     CTRL: postsController
         //     ACTION: delete
         //     PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL

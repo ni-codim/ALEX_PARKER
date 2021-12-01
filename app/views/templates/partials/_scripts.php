@@ -13,4 +13,6 @@
  <!-- JS Fontawesome -->
 
  <script src="https://kit.fontawesome.com/c7657912ce.js" crossorigin="anonymous"></script>
- 
+
+ <!-- surcharge -->
+ <script type="text/javascript" src="js/app.js"></script>

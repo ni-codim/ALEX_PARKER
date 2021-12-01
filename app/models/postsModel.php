@@ -105,6 +105,23 @@ function deleteOneById(\PDO $conn, int $id): bool{
     return intval($rs->execute());
 }
 
+/**
+ * [findNumberOfPosts description]
+ * @param  PDO    $conn
+ * @return [type]
+ */
+function findNumberOfPosts(\PDO $conn){
+  $sql = "SELECT COUNT(p.id) AS nbrTotalPosts
+          FROM posts p;";
+  $rs = $conn->query($sql);
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+/**
+ * [findNumberOfPostsByCategory description]
+ * @param  PDO    $conn       
+ * @return [type]
+ */
 function findNumberOfPostsByCategory(\PDO $conn){
     $sql = "SELECT COUNT(id) AS nbrPostsByCategory, category_id
             FROM posts

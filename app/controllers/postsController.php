@@ -14,6 +14,8 @@ function indexAction(\PDO $conn){
   // Je mets dans $posts la liste des 10 derniers posts que je demande au modèle des posts
     include_once '../app/models/postsModel.php';
     $posts = PostsModel\findAll($conn);
+
+
   // Je charge la vue posts/index dans $content
     GLOBAL $title, $content;
     $title = TITLE_POSTS_INDEX;
